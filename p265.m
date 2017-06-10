@@ -1,0 +1,11 @@
+nfft=512;
+Fs=44.1;
+[b1,a1]=cheby1(4,0.2,0.5);
+[b2,a2]=cheby1(4,0.2,0.6);
+[h1,f,s]=freqz(b1,a1,nfft,Fs);
+h2=freqz(b2,a2,nfft,Fs);
+h=[h1 h2];
+s.plot='mag';
+s.xunits='khz';
+s.yunits='linear';
+freqzplot(h,f,s);

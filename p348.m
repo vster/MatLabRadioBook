@@ -1,0 +1,9 @@
+[b,a]=ellip(8,1,40,0.6);
+bq=round(b*1000)/1000;
+aq=round(a*1000)/1000;
+[h,f]=freqz(b,a);
+hq=freqz(bq,aq);
+subplot(2,1,1);
+plot(f,abs(h));
+subplot(2,1,2);
+plot(f,abs(hq));
